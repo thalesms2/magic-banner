@@ -1,7 +1,7 @@
 'use client';
-import { deleteBanner } from '@/domain/banner/banner-service';
+import { deleteBanner } from '@/lib/banner/banner-service';
 import { Button } from "@/components/ui/button";
-import { Banner } from '@/domain/banner/banner-model';
+import { Banner } from '@/lib/banner/banner-model';
 import { useRouter } from 'next/navigation';
 import Image from "next/image"
 import {

@@ -12,7 +12,7 @@ import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
 import { useRouter } from 'next/navigation';
 
-import { createBanner, getPublicURL, uploadImage } from '@/domain/banner/banner-service';
+import { createBanner, getPublicURL, uploadImage } from '@/lib/banner/banner-service';
 
 export default function AddBanner() {
     const [form, setForm] = useState({ target_url: '', start_time: '', end_time: '' });

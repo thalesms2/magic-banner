@@ -1,6 +1,6 @@
 import AddBanner from '@/components/admin/add-banner';
 import ListBanners from '@/components/admin/list-banners';
-import { getAllBanners } from '@/domain/banner/banner-service';
+import { getAllBanners } from '@/lib/banner/banner-service';
 
 export default async function AdminPage() {
     const banners = await getAllBanners();

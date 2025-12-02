@@ -1,5 +1,7 @@
-import { supabase } from '@/lib/supabase';
-import { Banner } from '@/domain/banner/banner-model';
+import { createClient } from '@/lib/db/supabase/client';
+import { Banner } from '@/lib/banner/banner-model';
+
+const supabase = createClient();
 
 export async function getAllBanners(): Promise<Banner[] | null> {
     const { data, error } = await supabase

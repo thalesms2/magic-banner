@@ -53,21 +53,34 @@ export async function getActiveBanner(requestUrl: string): Promise<Banner | null
     }
 
     const now = new Date();
-    const currentTime = now.getHours() * 60 + now.getMinutes();
+    const options = {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false,
+        timeZone: 'America/Sao_Paulo'
+    };
+    const currentTime = now.toLocaleString('pt-BR', options);
+    const [currentH, currentM, currentS] = currentTime.split(':').map(Number);
+    const currentTotal = currentH * 60 * 60 + currentM * 60 + currentS;
 
     const activeBanner = banners?.find((banner) => {
-        if (!banner.start_time || !banner.end_time) return true;
+        if (!banner.start_time || !banner.end_time) return false;
 
-        const [startH, startM] = banner.start_time.split(':').map(Number);
-        const [endH, endM] = banner.end_time.split(':').map(Number);
+        const [startH, startM, startS] = banner.start_time.split(':').map(Number);
+        const [endH, endM, endS] = banner.end_time.split(':').map(Number);
 
-        const startTotal = startH * 60 + startM;
-        const endTotal = endH * 60 + endM;
+        const startTotal = startH * 60 * 60 + startM * 60 + startS;
+        const endTotal = endH * 60 * 60 + endM * 60 + endS;
 
-        return currentTime >= startTotal && currentTime <= endTotal;
+        return currentTotal >= startTotal && currentTotal <= endTotal;
     });
-
-    return activeBanner || null;
+    if (activeBanner) {
+        return activeBanner;
+    }
+    return banners?.find((banner) => {
+        if (!banner.start_time || !banner.end_time) return true;
+    })
 }
 
 export async function uploadImage(filePath: string, file: File) {

@@ -1,4 +1,4 @@
-import { getActiveBanner } from '@/domain/banner/banner-service';
+import { getActiveBanner } from '@/lib/banner/banner-service';
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function GET(req: NextRequest) {

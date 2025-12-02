@@ -1,12 +1,12 @@
-🪄 Magic Banner Plugin
+# 🪄 Magic Banner Plugin
 
-🚀 Desafio Técnico - Futuriza
+## 🚀 Desafio Técnico - Futuriza
 
-Este é um projeto Full Stack Next.js desenvolvido como desafio técnico, com o objetivo de criar um sistema dinâmico de gestão de banners. A aplicação permite a criação, listagem e exclusão de banners personalizados, que são exibidos em sites de terceiros através de um script embeddável, com base na URL da página e regras opcionais de horário.
+Este é um projeto Full Stack Next.js desenvolvido como desafio técnico, com o objetivo de criar um sistema dinâmico de gestão de banners. A aplicação permite a criação, listagem e exclusão de banners personalizados, que são exibidos em sites de terceiros através de um script embedável, com base na URL da página e regras opcionais de horário.
 
-✨ Funcionalidades
+## ✨ Funcionalidades
 
-🖥️ Painel Administrativo
+### 🖥️ Painel Administrativo
 
 * Criação de Banners: Formulário para cadastrar novos banners com os seguintes dados:
     * URL Alvo: URL completa da página onde o banner deve ser exibido (ex: https://lojaexemplo.com/produto/123).
@@ -14,24 +14,24 @@ Este é um projeto Full Stack Next.js desenvolvido como desafio técnico, com o 
     * Horário de Exibição: Intervalo de tempo opcional (ex: 08:00 às 12:00) em que o banner deve estar ativo.
     * Gestão: Listagem e exclusão de banners existentes.
 
-🌐 API e Script Embeddável
+### 🌐 API e Script Embeddável
 
 * API de Banners (/api/banners?url=...): Endpoint que recebe a URL da página do cliente e retorna o banner correspondente ativo naquele momento.
 * Script (magic-banner.js): Um arquivo JavaScript estático que é importado pelo site do cliente, detecta a URL, chama a API e injeta o HTML do banner no topo da página de forma dinâmica.
 
-🧱 Stack Técnica
+## 🧱 Stack Técnica
 
 Next.js Alto desempenho, server components, api routes.
 Supabase Banco de dados PostgreSQL S3 storage e auth login.
 shadcn.ui design system fácil e simples de ser utilizado e modificado.
 Domain Driven Design isola funcionalidades e mantem o código mais coeso para manutenção e extensão.
 
-🛠️ Instruções de Instalação e Configuração
+## 🛠️ Instruções de Instalação e Configuração
 
-Pré-requisitos
-Node.js (v18+)
-Conta no Supabase
-Conta no Vercel
+### Pré-requisitos
+* Node.js (v18+)
+* Conta no Supabase
+* Conta no Vercel
 
 1. Configuração do Banco de Dados
 
@@ -75,7 +75,7 @@ yarn dev
 
 O Painel Admin estará acessível em http://localhost:3000/admin.
 
-🧪 Como Testar o Script Embutível
+## 🧪 Como Testar o Script Embutível
 
 Após o deploy do projeto na Vercel (https://<seu-app>.vercel.app):
 
